@@ -21,3 +21,39 @@ print('----->', s[:2])
 # 以常量值为数据类型创建 Series对象。
 s = pd.Series(5, index=["a", "b", "c", "d", "e"])
 print(s)
+
+# 列表组成的字典形式创建
+df = pd.DataFrame({'one': [1., 2., 3., 5], 'two': [1., 2., 3., 4.]})
+print(df)
+
+# 以嵌套列表形式创建
+df = pd.DataFrame([[1., 2., 3., 4.], [2., 3., 1., 3.]], index=["a", "b"], columns=["one", "two", "three", "four"])
+print(df)
+
+# 以二维 ndarray 创建
+data = np.zeros((2,), dtype=[('A', 'i4'), ('B', 'f4'), ('C', 'a10')])
+data[:] = [(1, 2., 'hello'), (2, 3., 'world')]
+df = pd.DataFrame(data, index=["first", "second"], columns=["C", "A", "B"])
+print(df)
+
+# 字典形式创建
+
+data = {'one': pd.Series([1., 2., 3.], index=['a', 'b', 'c']),
+        'two': pd.Series([1., 2., 3., 4.], index=['a', 'b', 'c', 'd'])}
+df = pd.DataFrame(data, index=['d', 'b', 'a'], columns=['two', 'three'])
+print(df)
+data = [{'a': 1, 'b': 2}, {'a': 5, 'b': 10, 'c': 20}]
+df = pd.DataFrame(data, index=['first', 'second'], columns=['a', 'b'])
+print(df)
+
+# 以字典的字典创建
+df = pd.DataFrame({('a', 'b'): {('A', "B"): 1, ("A", "C"): 2},
+                   ('a', 'a'): {('A', "C"): 3, ("A", "B"): 4},
+                   ('a', 'c'): {('A', "B"): 5, ("A", "B"): 6},
+                   ('b', 'a'): {('A', "C"): 7, ("A", "B"): 8},
+                   ('b', 'b'): {('A', "D"): 9, ("A", "B"): 10},
+                   })
+print(df)
+
+
+# DateFrame数据访问对象
