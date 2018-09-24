@@ -40,8 +40,8 @@ print(df)
 
 data = {'one': pd.Series([1., 2., 3.], index=['a', 'b', 'c']),
         'two': pd.Series([1., 2., 3., 4.], index=['a', 'b', 'c', 'd'])}
-df = pd.DataFrame(data, index=['d', 'b', 'a'], columns=['two', 'three'])
-print(df)
+dfc = pd.DataFrame(data, index=['d', 'b', 'a'], columns=['two', 'one'])
+print(dfc)
 data = [{'a': 1, 'b': 2}, {'a': 5, 'b': 10, 'c': 20}]
 df = pd.DataFrame(data, index=['first', 'second'], columns=['a', 'b'])
 print(df)
@@ -55,5 +55,14 @@ df = pd.DataFrame({('a', 'b'): {('A', "B"): 1, ("A", "C"): 2},
                    })
 print(df)
 
+print("-----------------------------")
 
 # DateFrame数据访问对象
+print(dfc)
+print(dfc.index)
+print(dfc.columns)
+print(dfc.values)
+
+
+
+
