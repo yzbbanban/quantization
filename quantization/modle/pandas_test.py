@@ -15,8 +15,9 @@ print(s)
 # 以字典为数据类型创建 Series对象。
 s = pd.Series({'a': 0, 'b': 1, 'c': 2}, index=["a", "b", "c", "d", "e"])
 print(s)
-
-
+print('====> ', s.values)
+print('====>>', s.index)
+print('----->', s[:2])
 # 以常量值为数据类型创建 Series对象。
 s = pd.Series(5, index=["a", "b", "c", "d", "e"])
 print(s)
